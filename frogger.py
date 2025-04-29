@@ -15,7 +15,8 @@ wn.tracer(0)
 # spriteImageList = ["18Wheeler_Sprite.png","Frog_Sprite.png","Large_Log_Sprite.png","Lilypad_Sprite.png","Limo_Sprite.png",
 #                     "Medium_Log_Sprite.png","Small_Fast_Car_Sprite.png","Small_Log_Sprite.png","Small_Slow_Car_Sprite.png",
 #                     "Sunk_Turtle_sprite.png","Turtle_Sprite.png"]
-spriteImageList = ["Frog_Sprite.gif","Small_Fast_Car_Sprite.gif"]
+spriteImageList = ["Frog_Sprite.gif","Small_Fast_Car_Sprite.gif","Small_Slow_Car_Sprite.gif,",
+                   "Limo_Sprite.gif","18Wheeler_Sprite.gif"]
 for sprite in spriteImageList:
     wn.register_shape(sprite)
 
@@ -116,8 +117,8 @@ class Player(Sprite):
 
 
 level_1 = [
-    Car(0, -200, 100, 35, "Small_Fast_Car_Sprite.gif", -0.1,1),
-    Car(221, -200, 100, 35, "Small_Fast_Car_Sprite.gif", -0.1,1),
+    Car(0, -220, 90, 90, "Small_Fast_Car_Sprite.gif", -0.1,1),
+    Car(221, -220, 90, 90, "Small_Slow_Car_Sprite.gif", -0.05,1),
 
     # Car(0, -225, 121, 40, "car_right.gif", 0.1),
     # Car(221, -225, 121, 40, "car_right.gif", 0.1),
@@ -146,6 +147,18 @@ while True:
     wn.onkey(player.left, "Left")
 
     # Render
+    y=-220
+
+    while y<140:
+        x = -305
+        while x < 310:
+            # print(f"({x},{y}")
+            pen.goto(x, y)
+            pen.shape("Road_Tile.gif")
+            pen.stamp()
+            x += 90
+        y=y+90
+
     for sprite in sprites:
         sprite.renderImg(pen)
         sprite.update()
@@ -154,6 +167,7 @@ while True:
                 player.lives -= 1
                 player.backToStart()
                 break
+
 
 
     wn.update()
