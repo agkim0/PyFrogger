@@ -15,8 +15,7 @@ wn.tracer(0)
 # spriteImageList = ["18Wheeler_Sprite.png","Frog_Sprite.png","Large_Log_Sprite.png","Lilypad_Sprite.png","Limo_Sprite.png",
 #                     "Medium_Log_Sprite.png","Small_Fast_Car_Sprite.png","Small_Log_Sprite.png","Small_Slow_Car_Sprite.png",
 #                     "Sunk_Turtle_sprite.png","Turtle_Sprite.png"]
-spriteImageList = ["Frog_Sprite.gif","Small_Fast_Car_Sprite.gif","Small_Slow_Car_Sprite.gif,",
-                   "Limo_Sprite.gif","18Wheeler_Sprite.gif"]
+spriteImageList = ["Frog_Sprite.gif","Small_Fast_Car_Sprite.gif","Small_Slow_Car_Sprite.gif","Limo_Sprite.gif","18Wheeler_Sprite.gif"]
 for sprite in spriteImageList:
     wn.register_shape(sprite)
 
@@ -118,11 +117,22 @@ class Player(Sprite):
 
 level_1 = [
     Car(0, -220, 90, 90, "Small_Fast_Car_Sprite.gif", -0.1,1),
-    Car(221, -220, 90, 90, "Small_Slow_Car_Sprite.gif", -0.05,1),
+    Car(240, -220, 90, 90, "Small_Slow_Car_Sprite.gif", -0.1,2),
 
-    # Car(0, -225, 121, 40, "car_right.gif", 0.1),
-    # Car(221, -225, 121, 40, "car_right.gif", 0.1),
+    Car(-280, -130, 105, 90, "Limo_Sprite.gif", 0.1,3),
+    Car(221, -130, 90, 90, "Small_Fast_Car_Sprite.gif", 0.1,1),
+    Car(0, -130, 120, 90, "18Wheeler_Sprite.gif", 0.1,1),
+
     #
+    Car(-220, -40, 120, 90, "18Wheeler_Sprite.gif", -0.2,3),
+    Car(0, -40, 90, 90, "Small_Slow_Car_Sprite.gif", -0.2,1),
+    Car(220, -40, 105, 90, "Limo_Sprite.gif", -0.2,3),
+
+    Car(-280, 50, 120, 90, "18Wheeler_Sprite.gif", 0.2,3),
+    Car(-120,50, 90, 90, "Small_Slow_Car_Sprite.gif", 0.2,1),
+    Car(60, 50, 105, 90, "Limo_Sprite.gif", 0.2,3),
+    Car(200, 50, 105, 90, "Small_Fast_Car_Sprite.gif", 0.2,3),
+
     # Car(0, -175, 121, 40, "car_left.gif", -0.1),
     # Car(221, -175, 121, 40, "car_left.gif", -0.1),
     #
